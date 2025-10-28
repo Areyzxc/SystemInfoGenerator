@@ -121,7 +121,7 @@ The interactive GUI provides a user-friendly way to explore system information:
 ## Output Examples
 
 ### Interactive GUI
-![System Information GUI](screenshot.png)
+![System Information GUI](SystemReport.png)
 
 The GUI provides a comprehensive view of your system's status with multiple tabs:
 - **System**: General system information and uptime
