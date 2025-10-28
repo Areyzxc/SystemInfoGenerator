@@ -20,10 +20,12 @@ A Python-based tool to collect and display detailed system information, includin
   - System uptime and boot time
 
 - **Multiple Output Formats**:
-  - Interactive GUI (default)
+  - Interactive GUI (default) with export options
   - Human-readable text format
   - HTML report with a clean, responsive design
   - JSON format for programmatic use
+  - CSV format for spreadsheet applications
+  - PDF format for documentation and sharing
 
 - **Cross-Platform**: Works on Windows, macOS, and Linux
 
@@ -33,6 +35,9 @@ A Python-based tool to collect and display detailed system information, includin
 - Required packages (automatically installed via `requirements.txt`):
   - `psutil` - For system information gathering
   - `platformdirs` - For consistent cross-platform paths
+  - `reportlab` - For PDF report generation
+  - `fpdf2` - Alternative PDF generation
+  - `pandas` - For data handling and CSV export
 
 > **Note for Linux Users**: 
 > On some Linux distributions, you might need to install `python3-tk` for the GUI to work:
@@ -75,7 +80,7 @@ Generate system information reports.
 
 optional arguments:
   -h, --help            show this help message and exit
-  --output {text,html,json,gui}, -o {text,html,json,gui}
+  --output {text,html,json,csv,pdf,gui}, -o {text,html,json,csv,pdf,gui}
                         Output format (default: gui)
   --file FILE, -f FILE  Output file path (default: auto-generated filename)
 ```
@@ -87,7 +92,7 @@ The interactive GUI provides a user-friendly way to explore system information:
 - **Tabbed Interface**: Easily navigate between different system categories
 - **Visual Indicators**: Progress bars for CPU, RAM, and swap usage
 - **Sortable Tables**: Disk and network information in sortable tables
-- **Export Options**: Save reports in text, HTML, or JSON format
+- **Export Options**: Save reports in multiple formats (Text, HTML, JSON, CSV, PDF)
 - **Responsive Design**: Adapts to different window sizes
 
 ### Examples
@@ -112,7 +117,17 @@ The interactive GUI provides a user-friendly way to explore system information:
    python system_info.py --output text --file my_system_info.txt
    ```
 
-5. Generate a report without opening the GUI:
+5. Generate a CSV report for spreadsheet analysis:
+   ```bash
+   python system_info.py --output csv --file system_report.csv
+   ```
+
+6. Generate a PDF document:
+   ```bash
+   python system_info.py --output pdf --file system_report.pdf
+   ```
+
+7. Generate a report without opening the GUI:
    ```bash
    # This will generate a text report without showing the GUI
    python system_info.py --output text --file report.txt
@@ -166,6 +181,12 @@ Used Swap: 2.45 GB (6.8%)
 ### HTML Report
 Generates a responsive HTML page with the same information in a more visually appealing format, perfect for sharing or documentation.
 
+### CSV Report
+Generates a comma-separated values file that can be opened in spreadsheet applications like Microsoft Excel or Google Sheets. The CSV format is ideal for data analysis and processing.
+
+### PDF Report
+Creates a professional-looking PDF document with formatted tables and system information. The PDF is perfect for documentation, reports, or sharing system specifications in a portable format.
+
 ### JSON Output
 ```json
 {
@@ -203,8 +224,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Future Enhancements
 
 - [ ] Add more system metrics and monitoring capabilities
-- [ ] Implement real-time monitoring mode in the GUI
-- [ ] Add support for exporting to additional formats (CSV, PDF)
 - [ ] Add system tray integration for quick access
 - [ ] Add dark/light theme support
 - [ ] Implement data logging over time
