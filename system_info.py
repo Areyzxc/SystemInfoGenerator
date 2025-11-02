@@ -931,7 +931,7 @@ class ReportGenerator:
                     
                     description = (
                         "This tool provides comprehensive system information and monitoring capabilities. "
-                        "It was developed as part of the System Administration and Maintenance course."
+                        "It was developed as part of the System Administration and Maintenance course project for the Finals."
                     )
                     
                     ttk.Label(
@@ -947,10 +947,11 @@ class ReportGenerator:
                     team_frame.pack(fill='x', pady=5)
                     
                     team_members = [
-                        "Team Member 1 - Role/Contribution",
-                        "Team Member 2 - Role/Contribution",
-                        "Team Member 3 - Role/Contribution",
-                        "Team Member 4 - Role/Contribution"
+                        "Belza, John Jaylyn I. - Role/Contribution",
+                        "Constantino, Alvin Jr. B. - Role/Contribution",
+                        "Sabangan, Ybo T. - Role/Contribution",
+                        "Santiago, James Aries G. - Role/Contribution",
+                        "Silvestre, Jesse Lei C.  - Role/Contribution"
                     ]
                     
                     for member in team_members:
@@ -967,8 +968,8 @@ class ReportGenerator:
                     
                     course_info = [
                         "Course: System Administration and Maintenance",
-                        "Instructor: [Instructor Name]",
-                        "Institution: [Your Institution]",
+                        "Instructor: Prof. Joane Pearl G. Carandang",
+                        "Institution: Pateros Technological College",
                         "Year: 2025",
                         "Version: 1.0"
                     ]
