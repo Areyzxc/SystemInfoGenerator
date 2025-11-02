@@ -724,6 +724,9 @@ class ReportGenerator:
                     
                     # Network Info Tab
                     self._create_network_tab(notebook)
+
+                    # About Us Tab
+                    self._create_about_tab(notebook)
                     
                     # Add export buttons
                     btn_frame = ttk.Frame(main_frame)
@@ -904,7 +907,80 @@ class ReportGenerator:
                     self._add_info_row(io_frame, "Bytes Received:", io['bytes_recv'])
                     self._add_info_row(io_frame, "Packets Sent:", f"{io['packets_sent']:,}")
                     self._add_info_row(io_frame, "Packets Received:", f"{io['packets_recv']:,}")
-                
+
+                def _create_about_tab(self, notebook):
+                    """Create the About Us tab with project information."""
+                    frame = ttk.Frame(notebook, padding=20)
+                    notebook.add(frame, text="About Us")
+                    
+                    # Project Title
+                    title_font = ('Arial', 16, 'bold')
+                    header_font = ('Arial', 12, 'bold')
+                    text_font = ('Arial', 10)
+                    
+                    ttk.Label(
+                        frame, 
+                        text="System Information Tool", 
+                        font=title_font,
+                        justify='center'
+                    ).pack(pady=(0, 20))
+                    
+                    # Project Description
+                    desc_frame = ttk.LabelFrame(frame, text="Project Description", padding=10)
+                    desc_frame.pack(fill='x', pady=5)
+                    
+                    description = (
+                        "This tool provides comprehensive system information and monitoring capabilities. "
+                        "It was developed as part of the System Administration and Maintenance course."
+                    )
+                    
+                    ttk.Label(
+                        desc_frame, 
+                        text=description,
+                        font=text_font,
+                        wraplength=600,
+                        justify='left'
+                    ).pack(anchor='w')
+                    
+                    # Team Members
+                    team_frame = ttk.LabelFrame(frame, text="Development Team", padding=10)
+                    team_frame.pack(fill='x', pady=5)
+                    
+                    team_members = [
+                        "Team Member 1 - Role/Contribution",
+                        "Team Member 2 - Role/Contribution",
+                        "Team Member 3 - Role/Contribution",
+                        "Team Member 4 - Role/Contribution"
+                    ]
+                    
+                    for member in team_members:
+                        ttk.Label(
+                            team_frame,
+                            text=f"• {member}",
+                            font=text_font,
+                            justify='left'
+                        ).pack(anchor='w', padx=10, pady=2)
+                    
+                    # Course Information
+                    course_frame = ttk.LabelFrame(frame, text="Course Information", padding=10)
+                    course_frame.pack(fill='x', pady=5)
+                    
+                    course_info = [
+                        "Course: System Administration and Maintenance",
+                        "Instructor: [Instructor Name]",
+                        "Institution: [Your Institution]",
+                        "Year: 2025",
+                        "Version: 1.0"
+                    ]
+                    
+                    for info in course_info:
+                        ttk.Label(
+                            course_frame,
+                            text=info,
+                            font=text_font,
+                            justify='left'
+                        ).pack(anchor='w', padx=10, pady=2)
+                        
                 def _add_info_row(self, parent, label, value):
                     """Helper method to add a label and value to a frame."""
                     frame = ttk.Frame(parent)
