@@ -234,12 +234,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Future Enhancements
 
-- [ ] Incorporate argparse for CLI options (e.g., --format html)
 - [ ] Add logging for audits
 - [ ] Integrate matplotlib for charts (e.g., CPU pie)
 - [ ] Add system tray integration for quick access
 - [ ] Add dark/light theme support
-- [ ] Adding new Notebook next to Networks: About Us
+- [ ] Adding new Notebook next to Network: About Us for name of the member overview and purpose: Project for System Administration and Maintenance subject with other info to be added
 
 ## Known Issues
 
