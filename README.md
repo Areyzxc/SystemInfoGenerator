@@ -234,11 +234,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Future Enhancements
 
-- [ ] Add more system metrics and monitoring capabilities
+- [ ] Incorporate argparse for CLI options (e.g., --format html)
+- [ ] Add logging for audits
+- [ ] Integrate matplotlib for charts (e.g., CPU pie)
 - [ ] Add system tray integration for quick access
 - [ ] Add dark/light theme support
-- [ ] Implement data logging over time
-- [ ] Add tests and CI/CD pipeline
+- [ ] Adding new Notebook next to Networks: About Us
 
 ## Known Issues
 
