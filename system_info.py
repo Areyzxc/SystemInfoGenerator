@@ -728,6 +728,7 @@ class ReportGenerator:
                     # About Us Tab
                     self._create_about_tab(notebook)
                     
+                    
                     # Add export buttons
                     btn_frame = ttk.Frame(main_frame)
                     btn_frame.pack(fill=tk.X, pady=(10, 0))
@@ -907,81 +908,7 @@ class ReportGenerator:
                     self._add_info_row(io_frame, "Bytes Received:", io['bytes_recv'])
                     self._add_info_row(io_frame, "Packets Sent:", f"{io['packets_sent']:,}")
                     self._add_info_row(io_frame, "Packets Received:", f"{io['packets_recv']:,}")
-
-                def _create_about_tab(self, notebook):
-                    """Create the About Us tab with project information."""
-                    frame = ttk.Frame(notebook, padding=20)
-                    notebook.add(frame, text="About Us")
-                    
-                    # Project Title
-                    title_font = ('Arial', 16, 'bold')
-                    header_font = ('Arial', 12, 'bold')
-                    text_font = ('Arial', 10)
-                    
-                    ttk.Label(
-                        frame, 
-                        text="System Information Tool", 
-                        font=title_font,
-                        justify='center'
-                    ).pack(pady=(0, 20))
-                    
-                    # Project Description
-                    desc_frame = ttk.LabelFrame(frame, text="Project Description", padding=10)
-                    desc_frame.pack(fill='x', pady=5)
-                    
-                    description = (
-                        "This tool provides comprehensive system information and monitoring capabilities. "
-                        "It was developed as part of the System Administration and Maintenance course project for the Finals."
-                    )
-                    
-                    ttk.Label(
-                        desc_frame, 
-                        text=description,
-                        font=text_font,
-                        wraplength=600,
-                        justify='left'
-                    ).pack(anchor='w')
-                    
-                    # Team Members
-                    team_frame = ttk.LabelFrame(frame, text="Development Team", padding=10)
-                    team_frame.pack(fill='x', pady=5)
-                    
-                    team_members = [
-                        "Belza, John Jaylyn I. - Role/Contribution",
-                        "Constantino, Alvin Jr. B. - Role/Contribution",
-                        "Sabangan, Ybo T. - Role/Contribution",
-                        "Santiago, James Aries G. - Role/Contribution",
-                        "Silvestre, Jesse Lei C.  - Role/Contribution"
-                    ]
-                    
-                    for member in team_members:
-                        ttk.Label(
-                            team_frame,
-                            text=f"• {member}",
-                            font=text_font,
-                            justify='left'
-                        ).pack(anchor='w', padx=10, pady=2)
-                    
-                    # Course Information
-                    course_frame = ttk.LabelFrame(frame, text="Course Information", padding=10)
-                    course_frame.pack(fill='x', pady=5)
-                    
-                    course_info = [
-                        "Course: System Administration and Maintenance",
-                        "Instructor: Prof. Joane Pearl G. Carandang",
-                        "Institution: Pateros Technological College",
-                        "Year: 2025",
-                        "Version: 1.0"
-                    ]
-                    
-                    for info in course_info:
-                        ttk.Label(
-                            course_frame,
-                            text=info,
-                            font=text_font,
-                            justify='left'
-                        ).pack(anchor='w', padx=10, pady=2)
-                        
+                
                 def _add_info_row(self, parent, label, value):
                     """Helper method to add a label and value to a frame."""
                     frame = ttk.Frame(parent)
@@ -1019,6 +946,84 @@ class ReportGenerator:
                         ttk.Label(frame, text=text, width=30).pack(side=tk.LEFT, padx=5)
                     else:
                         ttk.Label(frame, text=f"{percent:.1f}%").pack(side=tk.LEFT, padx=5)
+
+                def _create_about_tab(self, notebook):
+                    """Create the About Us tab with project information."""
+                    frame = ttk.Frame(notebook, padding=20)
+                    notebook.add(frame, text="About Us")
+                    
+                    # Project Title
+                    title_font = ('Arial', 16, 'bold')
+                    header_font = ('Arial', 12, 'bold')
+                    text_font = ('Arial', 10)
+                    
+                    ttk.Label(
+                        frame, 
+                        text="System Information Tool", 
+                        font=title_font,
+                        justify='center'
+                    ).pack(pady=(0, 20))
+                    
+                    # Project Description
+                    desc_frame = ttk.LabelFrame(frame, text="Project Description", padding=10)
+                    desc_frame.pack(fill='x', pady=5)
+                    
+                    description = (
+                        "The System Information Tool is a comprehensive solution developed as part of the System Administration and Maintenance course project for the Finals."
+                        "This powerful application offers real-time system monitoring and detailed hardware information, including CPU and memory usage statistics."
+                        "It also provides in-depth network configuration details and performance metrics, along with thorough disk usage analysis."
+                        "The tool enhances productivity by allowing users to export comprehensive reports in multiple formats, including Text, HTML, JSON, CSV, and PDF, making it an essential utility for system administrators and IT professionals."
+                    )
+                    
+                    ttk.Label(
+                        desc_frame, 
+                        text=description,
+                        font=text_font,
+                        wraplength=600,
+                        justify='left'
+                    ).pack(anchor='w')
+            
+                    # Team Members
+                    team_frame = ttk.LabelFrame(frame, text="Development Team", padding=10)
+                    team_frame.pack(fill='x', pady=5)
+                    
+                    team_members = [
+                        "Belza, John Jaylyn I.",
+                        "Constantino, Alvin Jr. B.",
+                        "Sabangan, Ybo T.",
+                        "Santiago, James Aries G.",
+                        "Silvestre, Jesse Lei C."
+                    ]
+                    
+                    for member in team_members:
+                        ttk.Label(
+                            team_frame,
+                            text=f"• {member}",
+                            font=text_font,
+                            justify='left'
+                        ).pack(anchor='w', padx=10, pady=2)
+                    
+                    # Course Information
+                    course_frame = ttk.LabelFrame(frame, text="Course Information", padding=10)
+                    course_frame.pack(fill='x', pady=5)
+                    
+                    course_info = [
+                        "Course: System Administration and Maintenance",
+                        "Instructor: Prof. Joane Pearl G. Carandang",
+                        "Institution: Pateros Technological College",
+                        "Year: 2025",
+                        "Section: 4F",
+                        "Semester: 1st Semester - Finals",
+                        "Version: 1.0"
+                    ]
+                    
+                    for info in course_info:
+                        ttk.Label(
+                            course_frame,
+                            text=info,
+                            font=text_font,
+                            justify='left'
+                        ).pack(anchor='w', padx=10, pady=2)
                 
                 def _export_report(self, format_type):
                     """Export the report in the specified format."""
