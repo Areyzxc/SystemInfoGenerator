@@ -238,7 +238,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [ ] Integrate matplotlib for charts (e.g., CPU pie)
 - [ ] Add system tray integration for quick access
 - [ ] Add dark/light theme support
-- [ ] Adding new Notebook next to Network: About Us for name of the member overview and purpose: Project for System Administration and Maintenance subject with other info to be added
 
 ## Known Issues
 
