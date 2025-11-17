@@ -31,7 +31,7 @@ A Python-based tool to collect and display detailed system information, includin
 
 ## Requirements
 
-- Python 3.6+
+- Python 3.7+
 - Required packages (automatically installed via `requirements.txt`):
   - `psutil` - For system information gathering
   - `platformdirs` - For consistent cross-platform paths
